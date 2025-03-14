@@ -1,0 +1,142 @@
+https://firebase.google.com/  docs  > overview > firebase fundermentals > Web icon > Available Firebase services for web > Cloud Firestore for Web
+
+npm init                or      npm init -y (if you want to use default)
+npm install firebase    or      npm install firebase@latest
+npm install express     or      npm install express@latest
+
+
+==> How to use Vite
+
+1. Install 
+    => npm install --save-dev vite
+
+2. Create a new file as  vite.config.js
+    => import { defineConfig } from "vite";
+
+        // add(+) all files inside src => as one file(dist)
+
+        export default defineConfig({
+            root: './src',
+            build:{
+                outDir: "../dist", //define the output directory , the output directory for to build file
+            }
+        });
+
+3.Update package.json
+    =>"scripts": {
+            "dev": "vite",
+            "build": "vite build"
+        },
+        "type": "module"
+
+
+//Run Build the app for production (terminal)
+=> npm run build 
+
+//Run Vite in developement server (terminal)
+=> npm run dev
+ 
+//npm run build => when src change, to change dist
+
+//vite => see (src) root folder 
+
+//express => see dist folder
+
+==============================================================
+
+==> How to install tailwind css
+
+   // https://tailwindcss.com/  > get started > Using PostCSS 
+
+    1. terminal
+        => npm install tailwindcss @tailwindcss/postcss postcss
+
+    2. create file 
+        => "postcss.config.mjs"
+
+    3. add to  "postcss.config.mjs" 
+        => export default {
+                plugins: {
+                    "@tailwindcss/postcss": {},
+                }
+            }
+
+    4. add css file => @import "tailwindcss";
+
+    5. <link href="@import css file" rel="stylesheet">
+
+==============================================================
+
+==> How to install data fns
+
+    // https://date-fns.org/  > Documentation > installation
+
+    1. terminal
+        => npm install date-fns --save
+
+    2. add js file
+        => import { format } from "date-fns";
+
+==============================================================
+
+==> How to install fontawesome 6
+
+    1. terminal
+        => npm install @fortawesome/fontawesome-free
+
+    2. add js file
+        => import "@fortawesome/fontawesome-free/css/all.min.css";
+
+===============================================================
+
+==> for Firebase Authentication
+
+    // firebase > Docs > overview > firebase fundamentals > web(</> icon) > Available Firebase services for web > Authentication for Web
+
+    => for sign up
+        => Get started 
+        1. Sign up new users {}
+
+        //for => FirebaseError: Firebase: Error (auth/operation-not-allowed).
+        2.  => Email/Password Sign in
+                    firebase > go to console > my project > Build > Authentication > Sign-in method > Email/Password > checked  "Email/Password => Enable" > click "save"
+            //Email link checked Enable is login with email and send code to that email
+
+        //another feature => click "Add new provider"
+        3. => Google Sign in
+                checked  "Google => Enable" 
+                Public-facing name for project => your firebase project id
+                Support email for project => your firebase login gmail
+                click "save"
+
+    => for logout
+        => Password and Authentication
+        =>Sign out {}
+
+    =>for sign in
+        =>Get started
+        =>Sign in existing users {}
+
+    =>for Google sign in
+        =>sign in with Google
+        =>Create an instance of the Google provider object
+        =>To sign in with a pop-up window, call signInWithPopup {}
+
+    =>for Password reset
+        =>Manage Users
+        =>Send a password reset email {}
+
+    =>for auth check
+        =>Get started
+        =>Set an authentication state observer and get user data > onAuthStateChanged method. {}
+
+    =>for update profile photo and name 
+        =>Manage Users
+        =>Update a user's profile {}
+
+===============================================================
+
+=> Customize the Password reset email template & others
+you can customize the password reset email link to redirected user to a specific page in your app.
+
+=> Build > Authentication > Templates 
