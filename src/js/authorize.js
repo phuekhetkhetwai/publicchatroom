@@ -27,6 +27,8 @@ export function Authorize(){
                 displayName: fullname, 
                 photoURL: defaultprofileimg
               }).then(() => {
+
+                setLocalName(user);
                 window.location.href = "../index.html";
               });
         } catch (error) {

@@ -136,7 +136,34 @@ npm install express     or      npm install express@latest
 
 ===============================================================
 
-=> Customize the Password reset email template & others
+// Customize the Password reset email template & others
 you can customize the password reset email link to redirected user to a specific page in your app.
 
 => Build > Authentication > Templates 
+
+===============================================================
+
+==> Deploy on Cloud Server 
+
+1.your project need Repo public/private to Github
+
+2. have to use node support server 
+    => https://render.com/  
+    => Get started
+    => create acc email & password
+    => Tell us about yourself > Where is your project hosted? * //choose AWS
+    => click "continue to Reder"
+    => verify email 
+
+    // create new static site 
+        => click "+ New" > "static site"
+        => Github
+        => only select repo > select your Repo
+        => click "your repo"
+    
+    1. Name : unique domain name
+    2. Branch : main/master
+    3. Build command : npm run build (React,   Vue,Vite,etc..), ng build (Angular)
+    4. Public directory : dist
+    5. Environment Variables : copy paste .env data to  Environment Variables
+    6.click "Deploy Static site"
